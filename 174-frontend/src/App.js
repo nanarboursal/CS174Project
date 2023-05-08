@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, HashRouter } from 'react-router-dom';
 import Navigation from './Components/Navigation/Navigation';
 import Calendar from './Pages/Calendar/Calendar';
 import TodoList from './Pages/TodoList/TodoList';
@@ -8,7 +8,9 @@ import Register from './Pages/Register/Register';
 
 const App = () => {
   return (
-    <Router>
+    <HashRouter
+      // basename={"/app"}
+    >
       <div className='App'>
         <Navigation />
         <Routes>
@@ -18,7 +20,7 @@ const App = () => {
           <Route path="/register" element={<Register />} exact />
         </Routes>
       </div>
-    </Router>
+    </HashRouter>
   );
 }
 

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Navbar, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 import Cookies from 'js-cookie';
 import './Navigation.css';
 
@@ -16,32 +15,6 @@ const Navigation = () => {
     }
 
     return (
-        // <Navbar color="light" light expand="md">
-        //     <NavbarBrand href="/">Organizer</NavbarBrand>
-        //     {user && (
-        //         <Nav className="ml-auto" navbar>
-        //             <NavItem>
-        //                 <NavLink href="/calendar">Calendar</NavLink>
-        //             </NavItem>
-        //             <NavItem>
-        //                 <NavLink href="/">Todo List</NavLink>
-        //             </NavItem>
-        //             <NavItem>
-        //                 <button onClick={handleLogout}>Logout</button>
-        //             </NavItem>
-        //         </Nav>
-        //     )}
-        //     {!user && (
-        //         <Nav className="ml-auto" navbar>
-        //             <NavItem>
-        //                 <NavLink href="/login">Login</NavLink>
-        //             </NavItem>
-        //             <NavItem>
-        //                 <NavLink href="/register">Sign up</NavLink>
-        //             </NavItem>
-        //         </Nav>
-        //     )}
-        // </Navbar>
         <div id='nav'>
             <div>
                 <a href="/" class='button'>Organizer</a>
