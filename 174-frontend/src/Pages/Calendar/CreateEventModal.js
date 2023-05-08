@@ -46,13 +46,15 @@ const CreateEventModal = ({ isOpen, onClose, date }) => {
         onRequestClose={onClose}>
       <h2>Add Event</h2>
       <p>{datestr}</p>
-      <form onSubmit={handleSubmit}>
+      <form className='form-ctn' onSubmit={handleSubmit}>
         <label>
-          Title:
+          Title:&nbsp;&nbsp;&nbsp;
           <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
         </label>
-        <button type="submit">Create Event</button>
-        <button onClick={(e) => onClose()}>Cancel</button>
+        <div className='btn-ctn'>
+          <button type="submit">Create Event</button>
+          <button onClick={(e) => onClose()}>Cancel</button>
+        </div>
       </form>
     </ReactModal>
   );
