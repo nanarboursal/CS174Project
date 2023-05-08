@@ -1,7 +1,11 @@
 .parent {
-    margin: 1rem;
+    margin-top: 2rem;
     position: relative;
     z-index: 999;
+    background-color: white;
+    padding: 1rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
 }
 
 .fc {

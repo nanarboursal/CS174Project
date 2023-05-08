@@ -84,6 +84,7 @@ function Calendar() {
                     dateClick={handleDateClick}
                     selectable={true}
                     eventClick={handleEventClick}
+                    height='680px'
                     headerToolbar={{
                         start: "prev,next today",
                         center: "title",

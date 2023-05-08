@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Cookies from 'js-cookie';
 import ReactModal from "react-modal";
+import './CreateEventModal.css';
+import './EditEventModal.css';
 
 const EditEventModal = ({ isOpen, onClose, oldtitle }) => {
     const [title, setTitle] = useState("");
@@ -103,26 +105,32 @@ const EditEventModal = ({ isOpen, onClose, oldtitle }) => {
 
   return (
     <ReactModal 
-        className="create-modal" 
+        className="edit-modal" 
         overlayClassName="modal-overlay"
         isOpen={isOpen} 
         onRequestClose={onClose}>
       <h2>Edit Event</h2>
       <p>{oldtitle}</p>
-      <form >
-        <label>
-          Title:
-          <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
-        </label>
-        <button onClick={handleTitleUpdate}>Update title</button>
-        <label>
-          Date (yyyy-mm-dd):
-          <input type="text" value={date} onChange={(e) => setDate(e.target.value)} />
-        </label>
-        <button onClick={handleDateUpdate}>Update date</button>
-        <button onClick={handleDelete}>Delete event</button>
-        <button onClick={handleExport}>Export to todo list</button>
-        <button onClick={(e) => onClose()}>Cancel</button>
+      <form className='edit-form'>
+        <div className='title-update'>
+            <label>
+            Title:&nbsp;&nbsp;&nbsp;
+            <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
+            </label>
+            <button onClick={handleTitleUpdate}>Update title</button>
+        </div>
+        <div className='date-update'>
+            <label>
+            Date (yyyy-mm-dd):&nbsp;&nbsp;&nbsp;
+            <input type="text" value={date} onChange={(e) => setDate(e.target.value)} />
+            </label>
+            <button onClick={handleDateUpdate}>Update date</button>
+        </div>
+        <div className='other-btn'>
+            <button onClick={handleDelete}>Delete event</button>
+            <button onClick={handleExport}>Export to todo list</button>
+            <button onClick={(e) => onClose()}>Cancel</button>
+        </div>
       </form>
     </ReactModal>
   );

@@ -7,6 +7,7 @@
     <div id="root"></div>
     <script type="text/babel">
         const { useState } = React;
+        const Cookies = window.Cookies;
 
         function Login() {
             const [username, setUsername] = useState('');
@@ -26,8 +27,8 @@
                 .then(data => {
                     if (data.success) {
                     console.log('successful login');
-                    // Cookies.set('session', username, { path: '/' });
-                    // window.location.href = "/";
+                    Cookies.set('session', username, { path: 'http://cos-cs106.science.sjsu.edu/~013879866/code' });
+                    window.location.href = "http://cos-cs106.science.sjsu.edu/~013879866/tester/test2.php"; // change once todo is up
                     } else {
                     setErrorMessage(data.message);
                     }

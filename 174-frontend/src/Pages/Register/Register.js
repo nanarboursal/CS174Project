@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Cookies from 'js-cookie';
+import './Register.css'
 
 function Register() {
     const [username, setUsername] = useState('');
@@ -30,19 +31,23 @@ function Register() {
       }
 
     return (
-        <form onSubmit={handleSubmit}>
-          <label>
-            Username:
-            <input type="text" value={username} onChange={e => setUsername(e.target.value)} />
-          </label>
-          <label>
-            Password:
-            <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
-          </label>
-          <button type="submit">Register</button>
-          {errorMessage && <div>{errorMessage}</div>}
-        </form>
-      );
+      <div id='ctn'>
+        <div className='form'>
+          <form onSubmit={handleSubmit}>
+            <label>
+              Username:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <input type="text" value={username} onChange={e => setUsername(e.target.value)} />
+            </label>
+            <label>
+              Password:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
+            </label>
+            <button type="submit">Register</button>
+            {errorMessage && <div>{errorMessage}</div>}
+          </form>
+        </div>
+      </div>
+    );
 }
 
 export default Register;
