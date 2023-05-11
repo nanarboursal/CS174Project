@@ -1,0 +1,39 @@
+.create-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: inline-block;
+    padding: 2rem;
+    text-align: center;
+    z-index: 9999;
+    background-color: aliceblue;
+    border-radius: 5px;
+    color: #2C3E50;
+    border: solid #2C3E50;
+}
+
+.form-ctn {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn-ctn {
+    margin: 1rem;
+}
+
+.btn-ctn button {
+    margin: 1rem;
+    background-color: #2c3e50;
+    border: solid #2c3e50;
+    color: white;
+	border-radius: 5px;
+	margin: 3px;
+}
+
+.btn-ctn button:hover {
+    background-color: white;
+    border: solid #2c3e50 2px;
+    color: #2c3e50;
+	border-radius: 5px;
+}

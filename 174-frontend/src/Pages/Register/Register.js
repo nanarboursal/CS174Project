@@ -1,72 +1,53 @@
 import React, { useState } from 'react';
+import Cookies from 'js-cookie';
+import './Register.css'
 
 function Register() {
-    const [formData, setFormData] = useState({
-        firstName: '',
-        lastName: '',
-        email: '',
-        password: ''
-    });
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
 
-    // handle form submission
     const handleSubmit = (event) => {
         event.preventDefault();
-        // handle form submission logic
-    };
-
-    // handle form field changes
-    const handleChange = (event) => {
-        setFormData({
-            ...formData,
-            [event.target.name]: event.target.value
-        });
-    };
+        fetch('http://cos-cs106.science.sjsu.edu/~013879866/code/register.php', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ username, password })
+        })
+          .then(response => response.json())
+          .then(data => {
+            console.log(data);
+            if (data.success) {
+              console.log('successfully created user');
+              Cookies.set('session', username, { path: '/' });
+              window.location.href = "/";
+            } else {
+              setErrorMessage(data.message);
+            }
+          })
+          .catch(error => console.error(error));
+      }
 
     return (
-        <div style={{ display: 'flex', flexDirection: "column", justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-            <h1>Register</h1>
-            <form onSubmit={handleSubmit}>
-                <div style={{ margin: "15px" }}>
-                    <label htmlFor="first-name">First Name:</label>
-                    <input
-                        type="text"
-                        name="firstName"
-                        value={formData.firstName}
-                        onChange={handleChange}
-                    />
-                </div>
-                <div style={{ margin: "15px" }}>
-                    <label htmlFor="last-name">Last Name:</label>
-                    <input
-                        type="text"
-                        name="lastName"
-                        value={formData.lastName}
-                        onChange={handleChange}
-                    />
-                </div>
-                <div style={{ margin: "15px" }}>
-                    <label htmlFor="email">Email:</label>
-                    <input
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                    />
-                </div>
-                <div style={{ margin: "15px" }}>
-                    <label htmlFor="password">Password:</label>
-                    <input
-                        type="password"
-                        name="password"
-                        value={formData.password}
-                        onChange={handleChange}
-                    />
-                </div>
-
-                <button type="submit">Register</button>
-            </form>
-        </div>
-    );
+      <div id='ctn'>
+      <div className='form'>
+        <form onSubmit={handleSubmit}>
+          <label>
+            Username:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" value={username} onChange={e => setUsername(e.target.value)} />
+          </label>
+          <label>
+            Password:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
+          </label>
+          <button type="submit">Register</button>
+          {errorMessage && <div>{errorMessage}</div>}
+        </form>
+      </div>
+    </div>
+      );
 }
 
 export default Register;

@@ -1,0 +1,18 @@
+.parent {
+    margin-top: 2rem;
+    position: relative;
+    z-index: 999;
+    background-color: white;
+    padding: 1rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
+
+.fc {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #2c3e50;
+}
+
+.fc-day-today {
+    color: #2c3e50 !important;
+}

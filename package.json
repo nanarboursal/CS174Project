@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "@fullcalendar/daygrid": "^6.1.6",
+    "@fullcalendar/interaction": "^6.1.6",
+    "@fullcalendar/list": "^6.1.6",
+    "@fullcalendar/react": "^6.1.6",
+    "@fullcalendar/timegrid": "^6.1.6",
+    "bootstrap": "^5.2.3",
+    "js-cookie": "^3.0.5",
+    "moment": "^2.29.4",
+    "react-modal": "^3.16.1"
+  }
+}

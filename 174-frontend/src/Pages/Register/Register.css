@@ -1,0 +1,41 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    background-color: #bdc7d196;
+    align-items: center;
+    border-radius: 8px;
+    padding: 3rem;
+}
+
+.form h2 {
+    color: #2C3E50;
+    background-color: rgba(255, 255, 255, 0.658);
+    padding: 0.5rem;
+    border-radius: 8px;
+}
+
+.form form {
+    display: flex;
+    flex-direction: column;
+    margin-right: 4rem;
+    margin-left: 4rem;
+}
+
+.form form label {
+    margin-bottom: 1rem;
+    font-size: 20px;
+    color: #2C3E50;
+}
+
+.form form button {
+    color: #2C3E50;
+    font-size: 20px;
+}
+
+#ctn {
+    display: inline-block;
+    padding: 1rem;
+    position: absolute;
+    bottom: 30%;
+    left: 3rem;
+} 
